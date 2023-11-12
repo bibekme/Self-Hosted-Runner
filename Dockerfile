@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM --platform=linux/amd64 ubuntu:22.04
 
 ARG RUNNER_VERSION="2.311.0"
 
