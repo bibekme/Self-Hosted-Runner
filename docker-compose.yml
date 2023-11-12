@@ -1,0 +1,15 @@
+version: "3"
+services:
+  runner:
+    container_name: self-hosted-runner
+    build: .
+    env_file:
+      - ./.env
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/local/bin/docker
+      - runner:/home/runner
+volumes:
+  runner:
+    driver: local
